@@ -13,7 +13,7 @@ const { authenticateToken } = require("./middleware/auth");
 const db = require("./db/mysqlConnection");
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT =  5001;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -30,3 +30,4 @@ app.use("/api/assignments", authenticateToken, assignmentsRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
