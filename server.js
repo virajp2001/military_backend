@@ -9,14 +9,19 @@ const transfersRoutes = require("./routes/transfers");
 const assignmentsRoutes = require("./routes/assignments");
 const { authenticateToken } = require("./middleware/auth");
 
-
 const db = require("./db/mysqlConnection");
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
-app.use(bodyParser.json());
+
+app.use(cors({
+  origin: 'https://military-frontend-lkel.vercel.app', // frontend URL
+  credentials: true // allow cookies / auth headers
+}));
+
+// Parse JSON
+app.use(bodyParser.json()); 
 
 // Public routes
 app.use("/api/auth", authRoutes);
