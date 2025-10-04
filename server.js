@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001;
 
 
 app.use(cors({
-  origin: 'https://military-frontend-lkel.vercel.app', // frontend URL
+  origin: 'https://military-frontend-henna.vercel.app/', // frontend URL
   credentials: true // allow cookies / auth headers
 }));
 
@@ -35,3 +35,4 @@ app.use("/api/assignments", authenticateToken, assignmentsRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
